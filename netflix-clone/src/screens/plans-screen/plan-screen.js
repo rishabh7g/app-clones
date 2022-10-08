@@ -2,6 +2,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import {
    addDoc,
    collection,
+   deleteDoc,
    doc,
    getDocs,
    onSnapshot,
@@ -73,6 +74,10 @@ export const PlanScreen = () => {
       // read a sub-collection from firestore
       const customerRef = doc(db, 'customers', user.uid);
       const checkoutSessionRef = collection(customerRef, 'checkout_sessions');
+      const querySnap = await getDocs(checkoutSessionRef);
+
+      // delete all the docs
+      querySnap.forEach((doc) => deleteDoc(doc.ref));
 
       addDoc(checkoutSessionRef, checkoutSessionData)
          .then(async (docRef) => {
@@ -98,10 +103,11 @@ export const PlanScreen = () => {
       <div className='plan-screen'>
          {subscription && (
             <p className='plan-screen__renewal-date'>
-               Renewal date: 
-               {" "+ new Date(
-                  subscription.current_period_end * 1000
-               ).toLocaleDateString()}
+               Renewal date:
+               {' ' +
+                  new Date(
+                     subscription.current_period_end * 1000
+                  ).toLocaleDateString()}
             </p>
          )}
          {Object.entries(products).map(([id, product]) => {
