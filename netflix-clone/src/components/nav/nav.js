@@ -5,7 +5,7 @@ import NetflixLogo from '../../assets/images/netflix-logo.png';
 
 import './nav.css';
 
-export const Nav = () => {
+export const Nav = ({ showAvatar = true }) => {
    const [show, setShow] = useState(false);
    const navigate = useNavigate();
 
@@ -22,12 +22,14 @@ export const Nav = () => {
       <div className={`nav ${show && 'nav__black'}`}>
          <div className='nav__contents'>
             <img className='nav__logo' src={NetflixLogo} alt='Logo' />
-            <img
-               className='nav__avatar'
-               src={NetflixAvatar}
-               alt='Avatar'
-               onClick={() => navigate('profile')}
-            />
+            {showAvatar && (
+               <img
+                  className='nav__avatar'
+                  src={NetflixAvatar}
+                  alt='Avatar'
+                  onClick={() => navigate('profile')}
+               />
+            )}
          </div>
       </div>
    );

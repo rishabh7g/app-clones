@@ -1,6 +1,6 @@
 import {
    createUserWithEmailAndPassword,
-   signInWithEmailAndPassword, 
+   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import React, { useRef } from 'react';
 import { auth } from '../../firebase';
@@ -19,13 +19,7 @@ export const SignInScreen = () => {
       ];
 
       createUserWithEmailAndPassword(auth, email, password)
-         .then((authUser) => {
-            console.log(
-               '%c DEBUGGING Registration',
-               'color: LightCoral',
-               authUser
-            );
-         })
+         .then((authUser) => {})
          .catch((error) => {
             alert(error.message);
          });
@@ -40,9 +34,7 @@ export const SignInScreen = () => {
       ];
 
       signInWithEmailAndPassword(auth, email, password)
-         .then((authUser) => {
-            console.log('%c DEBUGGING Signin', 'color: LightCoral', authUser);
-         })
+         .then((authUser) => {})
          .catch((error) => {
             alert(error.message);
          });

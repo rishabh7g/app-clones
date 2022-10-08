@@ -12,7 +12,7 @@ export const ProfileScreen = () => {
    const user = useSelector(selectUser);
    return (
       <div className='profile-screen'>
-         <Nav />
+         <Nav showAvatar={false} />
          <div className='profile-screen__body'>
             <h1>Edit profile</h1>
             <div className='profile-screen__info'>
