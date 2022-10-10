@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import BackgroundCircles from '../background-circles/background-circles';
+import BackgroundCircles from '../../background-circles/background-circles';
 
 export const Hero = () => {
    const [text, count] = useTypewriter({
