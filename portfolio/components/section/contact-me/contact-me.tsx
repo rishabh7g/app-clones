@@ -1,7 +1,20 @@
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/20/solid';
 import { motion } from 'framer-motion';
+import { SubmitHandler, useForm } from 'react-hook-form';
+
+type Inputs = {
+   name: string;
+   email: string;
+   subject: string;
+   message: string;
+};
 
 export const ContactMe = () => {
+   const { register, handleSubmit } = useForm<Inputs>();
+   const onSubmit: SubmitHandler<Inputs> = (formData) => {
+      window.location.href = `mailto:rishabh7g@gmail.com?subject=${formData.subject}&body=Hi, my name is ${formData.name}, ${formData.message} (${formData.email})`;
+   };
+
    return (
       <motion.div
          initial={{ opacity: 0 }}
@@ -34,25 +47,32 @@ export const ContactMe = () => {
                   <p>123 Developer lane</p>
                </div>
             </div>
-            <form className='mx-auto flex flex-col items-center space-y-2'>
+            <form
+               onSubmit={handleSubmit(onSubmit)}
+               className='mx-auto flex flex-col items-center space-y-2'
+            >
                <div className='flex space-x-2'>
                   <input
-                     placeholder='First name'
+                     {...register('name')}
+                     placeholder='Name'
                      className='contact__input'
                      type='text'
                   />
                   <input
-                     placeholder='Last name'
+                     {...register('email')}
+                     placeholder='Email'
                      className='contact__input'
-                     type='text'
+                     type='email'
                   />
                </div>
                <input
-                  placeholder='Email'
+                  {...register('subject')}
+                  placeholder='Subject'
                   className='contact__input'
                   type='text'
                />
                <textarea
+                  {...register('message')}
                   placeholder='Message'
                   className='contact__input'
                ></textarea>
