@@ -14,7 +14,7 @@ export const Projects = ({}: Props) => {
             Projects
          </h3>
 
-         <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll'>
+         <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
             {projects.map((project, i) => (
                <div
                   key={project}
@@ -26,7 +26,7 @@ export const Projects = ({}: Props) => {
                      initial={{ y: -300, opacity: 0 }}
                      transition={{ duration: 1.2 }}
                      whileInView={{ y: 0, opacity: 1 }}
-                     viewport={{ once: true  }}
+                     viewport={{ once: true }}
                   />
                   <div className='max-w-6xl space-y-10 px-0 md:px-10'>
                      <h4 className='text-center text-4xl font-semibold'>
