@@ -22,10 +22,9 @@ export default {
          of: [{ type: 'reference', to: { type: 'skill' } }],
       },
       {
-         name: 'linkToBuild',
-         title: 'LinkToBuild',
-         type: 'array',
-         of: [{ type: 'string' }],
+         name: 'githubUrl',
+         title: 'GithubUrl',
+         type: 'url',
       },
    ],
 };
