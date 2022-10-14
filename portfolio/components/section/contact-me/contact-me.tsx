@@ -34,17 +34,17 @@ export const ContactMe = () => {
                </span>
             </h4>
             <div className='space-y-10'>
-               <div className='flex items-center justify-center space-x-5'>
+               {/* <div className='flex items-center justify-center space-x-5'>
                   <PhoneIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
                   <p>+123456789</p>
-               </div>
+               </div> */}
                <div className='flex items-center justify-center space-x-5'>
                   <EnvelopeIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
-                  <p>joe@gmail.com</p>
+                  <p>rishabh7g@gmail.com</p>
                </div>
                <div className='flex items-center justify-center space-x-5'>
                   <MapPinIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
-                  <p>123 Developer lane</p>
+                  <p>Bangalore, India</p>
                </div>
             </div>
             <form

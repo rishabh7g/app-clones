@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import { urlFor } from '../../../sanity';
+import { Project } from '../../../typings';
 
-export const Projects = ({}: Props) => {
-   const projects = [1, 2, 3, 4, 5];
+type Props = {
+   projects: Project[];
+};
+
+export const Projects = ({ projects }: Props) => {
    return (
       <motion.div
          initial={{ opacity: 0 }}
@@ -17,11 +21,11 @@ export const Projects = ({}: Props) => {
          <div className='relative z-20 flex w-full snap-x snap-mandatory overflow-y-hidden overflow-x-scroll scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
             {projects.map((project, i) => (
                <div
-                  key={project}
+                  key={project._id}
                   className='flex h-screen w-screen flex-shrink-0 snap-center flex-col items-center justify-center space-y-5 p-20 md:p-44'
                >
                   <motion.img
-                     src='/assets/images/project-view.jpeg'
+                     src={urlFor(project?.image).url()}
                      alt='project-image'
                      initial={{ y: -300, opacity: 0 }}
                      transition={{ duration: 1.2 }}
@@ -33,13 +37,23 @@ export const Projects = ({}: Props) => {
                         <span className='underline decoration-[#F7AB0A]/50'>
                            Case Study {i + 1} of {projects.length}:
                         </span>{' '}
-                        UPS Clone
+                        {project?.title}
                      </h4>
+
+                     <div className='flex items-center justify-center space-x-2'>
+                        {project?.technologies.map((technology) => (
+                           // eslint-disable-next-line @next/next/no-img-element
+                           <img
+                              className='h-9'
+                              key={technology._id}
+                              src={urlFor(technology?.image).url()}
+                              alt={technology.title}
+                           />
+                        ))}
+                     </div>
+
                      <p className='text-center text-lg md:text-left'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Aut alias nemo tenetur. Id eveniet ratione delectus?
-                        Rerum harum ratione animi expedita minus dolor repellat
-                        maiores. Quasi molestiae itaque possimus porro.
+                        {project?.summary}
                      </p>
                   </div>
                </div>

@@ -1,40 +1,47 @@
 import { motion } from 'framer-motion';
-import Image from 'next/image';
-type Props = {};
+import { urlFor } from '../../sanity';
+import { WorkExperience } from '../../typings';
 
-export const ExperienceCard = (props: Props) => {
+type Props = {
+   experience: WorkExperience;
+};
+
+export const ExperienceCard = ({ experience }: Props) => {
    return (
-      <article className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0 w-[500px] md:w-[600px] xl:w-[900px] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'>
+      <article className='flex w-[500px] flex-shrink-0 cursor-pointer snap-center flex-col items-center space-y-7 overflow-hidden rounded-lg bg-[#292929] p-10 opacity-40 transition-opacity duration-200 hover:opacity-100 md:w-[600px] xl:w-[900px]'>
          <motion.img
             initial={{ y: -100, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 1.2 }}
             viewport={{ once: true }}
-            src='/assets/images/cartoon-pic.png'
+            src={urlFor(experience?.companyImage).url()}
             alt='pic'
-            className='rounded-full w-32 h-32 xl:w-[200px] xl:h-[200px] object-cover object-center'
+            className='h-32 w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]'
          />
          <div className='px-0 md:px-10'>
-            <h4 className='text-4xl font-light'>Developer</h4>
-            <p className='font-bold text-2xl mt-1'>Coforge</p>
-            <div className='flex space-x-2 my-2'>
-               <Image
-                  className='rounded-full'
-                  src='/assets/svg/css3.svg'
-                  height={40}
-                  width={40}
-                  alt='skill'
-               />
+            <h4 className='text-4xl font-light'>{experience.jobTitle}</h4>
+            <p className='mt-1 text-2xl font-bold'>{experience.company}</p>
+            <div className='my-2 flex space-x-2'>
+               {experience.technologies.map((technology) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                     key={technology._id}
+                     className='h-9 rounded-full'
+                     src={urlFor(technology?.image).url()}
+                     alt='skill'
+                  />
+               ))}
             </div>
-            <p className='uppercase py-5 text-gray-300'>
-               Started work... - Ended...
+            <p className='py-5 uppercase text-gray-300'>
+               {new Date(experience.dateStarted).toDateString()} -{' '}
+               {experience.isCurrentlyWorkingHere
+                  ? 'Present'
+                  : new Date(experience.dateEnded).toDateString()}
             </p>
-            <ul className='list-disc space-y-4 ml-5 text-lg'>
-               <li>Summary points</li>
-               <li>Summary points</li>
-               <li>Summary points</li>
-               <li>Summary points</li>
-               <li>Summary points</li>
+            <ul className='ml-5 list-disc space-y-4 text-lg'>
+               {experience.points.map((point) => (
+                  <li key={point}>{point}</li>
+               ))}
             </ul>
          </div>
       </article>

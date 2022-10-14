@@ -1,17 +1,21 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { urlFor } from '../../../sanity';
+import { PageInfo } from '../../../typings';
 
-type Props = {};
+type Props = {
+   pageInfo: PageInfo;
+};
 
-export const About = ({}: Props) => {
+export const About = ({ pageInfo }: Props) => {
    return (
       <motion.div
          initial={{ opacity: 0 }}
          whileInView={{ opacity: 1 }}
          transition={{ duration: 1.5 }}
-         className='relative flex flex-col h-screen text-center px-10 justify-evenly mx-auto items-center md:flex-row md:text-left'
+         className='relative mx-auto flex h-screen flex-col items-center justify-evenly px-10 text-center md:flex-row md:text-left'
       >
-         <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
+         <h3 className='absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500'>
             About
          </h3>
          <motion.img
@@ -19,8 +23,8 @@ export const About = ({}: Props) => {
             transition={{ duration: 1.2 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className='-mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[500px] xl:h-[600px]'
-            src='/assets/images/profile-pic.jpg'
+            className='md:h-95 -mb-20 h-56 w-56 flex-shrink-0 rounded-full object-cover md:mb-0 md:w-64 md:rounded-lg xl:h-[600px] xl:w-[500px]'
+            src={urlFor(pageInfo?.profilePic).url()}
             alt='profile pic'
          />
          <div className='space-y-10 px-0 md:px-10'>
@@ -29,19 +33,7 @@ export const About = ({}: Props) => {
                <span className='underline decoration-[#F7AB0A]/50'>little</span>{' '}
                background
             </h4>
-            <p className='text-sm'>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-               minima aliquid provident consectetur, maxime, odio fugit sequi
-               vero harum, voluptatum magni iste! Reprehenderit minima
-               consequuntur numquam qui praesentium? Saepe incidunt aliquam
-               aspernatur, ratione repudiandae totam ex reprehenderit sed
-               reiciendis quae eaque nobis pariatur porro fuga alias natus modi
-               id quibusdam doloremque quasi architecto. Placeat rerum provident
-               veniam, explicabo deleniti quis aut rem culpa officiis atque
-               voluptatem assumenda nihil unde est odit quae consequuntur
-               ducimus quibusdam laboriosam soluta magnam sit cumque qui? Iure
-               non maxime culpa facili.
-            </p>
+            <p className='text-sm'>{pageInfo?.backgroundInformation}</p>
          </div>
       </motion.div>
    );
