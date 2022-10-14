@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { SocialIcon } from 'react-social-icons';
 import { urlFor } from '../../../sanity';
 import { Project } from '../../../typings';
 
@@ -38,6 +39,18 @@ export const Projects = ({ projects }: Props) => {
                            Case Study {i + 1} of {projects.length}:
                         </span>{' '}
                         {project?.title}
+                        <span className='mx-auto flex flex-row items-center justify-center'>
+                           <SocialIcon
+                              className='h-10 w-10 cursor-pointer'
+                              url={project.githubUrl}
+                              fgColor='gray'
+                              bgColor='transparent'
+                              label='Link to github repo'
+                           ></SocialIcon>
+                           <a href={project.githubUrl} className='text-2xl'>
+                              Github
+                           </a>
+                        </span>
                      </h4>
 
                      <div className='flex items-center justify-center space-x-2'>
