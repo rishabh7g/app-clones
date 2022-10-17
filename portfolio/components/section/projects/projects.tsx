@@ -46,8 +46,13 @@ export const Projects = ({ projects }: Props) => {
                               fgColor='gray'
                               bgColor='transparent'
                               label='Link to github repo'
+                              target='_blank'
                            ></SocialIcon>
-                           <a href={project.githubUrl} className='text-2xl'>
+                           <a
+                              href={project.githubUrl}
+                              className='text-2xl'
+                              target='blank'
+                           >
                               Github
                            </a>
                         </span>
