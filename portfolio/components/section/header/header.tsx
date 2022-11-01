@@ -18,6 +18,7 @@ export const Header = ({ socials }: Props) => {
             }}
             animate={{ x: 0, opacity: 1, scale: 1 }}
             transition={{ duration: 1.5 }}
+            className='flex sm:gap-1'
          >
             {socials.map((social) => (
                <SocialIcon
