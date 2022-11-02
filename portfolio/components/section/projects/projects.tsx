@@ -15,7 +15,7 @@ export const Projects = ({ projects }: Props) => {
          transition={{ duration: 1.5 }}
          className='text-lft relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden px-10 md:flex-row'
       >
-         <h3 className='absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500'>
+         <h3 className='absolute top-24 text-xl uppercase tracking-[20px] text-gray-500 sm:text-2xl'>
             Projects
          </h3>
 
