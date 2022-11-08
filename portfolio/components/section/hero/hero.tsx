@@ -19,7 +19,7 @@ export const Hero = ({ pageInfo }: Props) => {
       delaySpeed: 2000,
    });
    return (
-      <div className='flex h-screen flex-col items-center justify-center space-y-8 overflow-hidden text-center'>
+      <div className='flex h-screen flex-col items-center justify-center space-y-6 overflow-hidden text-center sm:space-y-8'>
          <BackgroundCircles />
          {/* eslint-disable-next-line @next/next/no-img-element */}
          <img
@@ -28,10 +28,10 @@ export const Hero = ({ pageInfo }: Props) => {
             alt='profile pic'
          />
          <div className='z-20'>
-            <h2 className='pb-2 text-sm uppercase tracking-[15px] text-gray-500'>
+            <h2 className='pb-2 text-xs  uppercase tracking-[8px] sm:tracking-[15px] text-gray-500 sm:text-sm'>
                {pageInfo.role}
             </h2>
-            <h1 className='scroll-px-10 text-5xl font-semibold lg:text-6xl'>
+            <h1 className='scroll-px-10 text-xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl'>
                <span className='mr-3'>{text}</span>
                <Cursor cursorColor='#F7AB0A' />
             </h1>

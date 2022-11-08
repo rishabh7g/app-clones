@@ -27,6 +27,12 @@ export default {
          options: { hotspot: true },
       },
       {
+         name: 'secondaryProfilePic',
+         title: 'SecondaryProfilePic',
+         type: 'image',
+         options: { hotspot: true },
+      },
+      {
          name: 'phoneNumber',
          title: 'PhoneNumber',
          type: 'string',

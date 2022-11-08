@@ -1,4 +1,4 @@
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/20/solid';
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/20/solid';
 import { motion } from 'framer-motion';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -22,22 +22,18 @@ export const ContactMe = () => {
          transition={{ duration: 1.5 }}
          className='text-lft relative mx-auto flex h-screen max-w-full flex-col items-center justify-evenly overflow-hidden px-10 md:flex-row'
       >
-         <h3 className='absolute top-24 text-2xl uppercase tracking-[20px] text-gray-500'>
+         <h3 className='absolute top-24 text-xl uppercase tracking-[20px] text-gray-500 sm:text-2xl'>
             Contact Me
          </h3>
 
-         <div className='flex flex-col space-y-10'>
-            <h4 className='text-center text-4xl font-semibold'>
+         <div className='mt-14 flex flex-col space-y-4 sm:mt-0 sm:space-y-8 md:space-y-10'>
+            <h4 className='text-center text-2xl font-semibold sm:text-3xl md:text-4xl'>
                I have got just what you need.{' '}
                <span className='underline decoration-[#F7AB0A]/50'>
-                  Lets Talk.
+                  {"Let's talk"}
                </span>
             </h4>
-            <div className='space-y-10'>
-               {/* <div className='flex items-center justify-center space-x-5'>
-                  <PhoneIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
-                  <p>+123456789</p>
-               </div> */}
+            <div className='space-y-3 sm:space-y-8 md:space-y-10'>
                <div className='flex items-center justify-center space-x-5'>
                   <EnvelopeIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
                   <p>rishabh7g@gmail.com</p>
