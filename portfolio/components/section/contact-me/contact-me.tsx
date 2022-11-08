@@ -30,7 +30,7 @@ export const ContactMe = () => {
             <h4 className='text-center text-4xl font-semibold'>
                I have got just what you need.{' '}
                <span className='underline decoration-[#F7AB0A]/50'>
-                  Lets Talk.
+                  {"Let's talk"}
                </span>
             </h4>
             <div className='space-y-10'>
