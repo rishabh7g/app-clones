@@ -28,7 +28,7 @@ export const Hero = ({ pageInfo }: Props) => {
             alt='profile pic'
          />
          <div className='z-20'>
-            <h2 className='pb-2 text-xs  uppercase tracking-[8px] sm:tracking-[15px] text-gray-500 sm:text-sm'>
+            <h2 className='pb-2 uppercase  tracking-[8px] text-gray-500 sm:text-sm sm:tracking-[15px] md:text-lg'>
                {pageInfo.role}
             </h2>
             <h1 className='scroll-px-10 text-xl font-semibold sm:text-4xl md:text-5xl lg:text-6xl'>
@@ -37,16 +37,18 @@ export const Hero = ({ pageInfo }: Props) => {
             </h1>
             <div className='pt-5'>
                <Link href='#about'>
-                  <button className='hero__button'>About</button>
+                  <button className='hero__button md:text-lg'>About</button>
                </Link>
                <Link href='#experience'>
-                  <button className='hero__button'>Experience</button>
+                  <button className='hero__button md:text-lg'>
+                     Experience
+                  </button>
                </Link>
                <Link href='#skills'>
-                  <button className='hero__button'>Skills</button>
+                  <button className='hero__button md:text-lg'>Skills</button>
                </Link>
                <Link href='#projects'>
-                  <button className='hero__button'>Projects</button>
+                  <button className='hero__button md:text-lg'>Projects</button>
                </Link>
             </div>
          </div>
