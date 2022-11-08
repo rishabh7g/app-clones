@@ -12,8 +12,8 @@ export const Hero = ({ pageInfo }: Props) => {
    const [text, count] = useTypewriter({
       words: [
          `Aello, The Name's ${pageInfo.name}`,
-         'Guy-who-loves-UI-UX.tsx',
-         '<ButLovesReactCSSMore />',
+         'Guy-who-love-UI-UX.tsx',
+         '<PerformMagicInReactCSS />',
       ],
       loop: true,
       delaySpeed: 2000,
