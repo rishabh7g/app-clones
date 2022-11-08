@@ -8,8 +8,7 @@
       "start": "next start",
       "lint": "next lint",
       "deploy:vercel": "vercel build && vercel deploy --prebuilt && vercel --prod",
-      "deploy:sanity": "cd sanity && sanity deploy",
-      "deploy": "yarn deploy:sanity && yarn deploy:vercel"
+      "deploy:sanity": "sanity deploy"
    },
    "dependencies": {
       "@heroicons/react": "^2.0.12",
