@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useMediaQuery } from 'react-responsive';
 import { urlFor } from '../../../sanity';
 import { PageInfo } from '../../../typings';
 
@@ -7,6 +8,12 @@ type Props = {
 };
 
 export const About = ({ pageInfo }: Props) => {
+   const isMobile = useMediaQuery({ query: '(max-width: 640px)' });
+
+   const framerInitial = isMobile
+      ? { x: -100, opacity: 0 }
+      : { x: -200, opacity: 0 };
+
    return (
       <motion.div
          initial={{ opacity: 0 }}
@@ -20,7 +27,7 @@ export const About = ({ pageInfo }: Props) => {
          <div className='mt-5 flex flex-col gap-5 sm:mt-0 xl:flex-row'>
             <div className='flex flex-row justify-center gap-5 xl:flex-1 xl:basis-1/2'>
                <motion.img
-                  initial={{ x: -200, opacity: 0 }}
+                  initial={framerInitial}
                   transition={{ duration: 1.2 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
