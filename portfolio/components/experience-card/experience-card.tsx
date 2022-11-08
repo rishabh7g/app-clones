@@ -16,7 +16,7 @@ export const ExperienceCard = ({ experience }: Props) => {
             viewport={{ once: true }}
             src={urlFor(experience?.companyImage).url()}
             alt='pic'
-            className='h-20 w-20 sm:h-32 sm:w-32 rounded-full object-cover object-center xl:h-[200px] xl:w-[200px]'
+            className='h-20 w-20 rounded-full object-cover object-center sm:h-32 sm:w-32 xl:h-[200px] xl:w-[200px]'
          />
          <div className='px-0 md:px-10'>
             <h4 className='text-2xl font-light sm:text-4xl'>
@@ -42,7 +42,7 @@ export const ExperienceCard = ({ experience }: Props) => {
                   ? 'Present'
                   : new Date(experience.dateEnded).toDateString()}
             </p>
-            <ul className='ml-5 hidden list-disc space-y-4 text-lg sm:block'>
+            <ul className='ml-5 hidden list-disc space-y-4 text-left text-lg sm:block'>
                {experience.points.map((point) => (
                   <li key={point}>{point}</li>
                ))}
