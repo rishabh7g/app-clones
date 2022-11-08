@@ -26,14 +26,14 @@ export const ContactMe = () => {
             Contact Me
          </h3>
 
-         <div className='flex flex-col space-y-10'>
-            <h4 className='text-center text-4xl font-semibold'>
+         <div className='mt-14 flex flex-col space-y-4 sm:mt-0 sm:space-y-8 md:space-y-10'>
+            <h4 className='text-center text-2xl font-semibold sm:text-3xl md:text-4xl'>
                I have got just what you need.{' '}
                <span className='underline decoration-[#F7AB0A]/50'>
                   {"Let's talk"}
                </span>
             </h4>
-            <div className='space-y-10'>
+            <div className='space-y-3 sm:space-y-8 md:space-y-10'>
                <div className='flex items-center justify-center space-x-5'>
                   <EnvelopeIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
                   <p>rishabh7g@gmail.com</p>
