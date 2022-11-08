@@ -1,4 +1,4 @@
-import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/20/solid';
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/20/solid';
 import { motion } from 'framer-motion';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
@@ -34,10 +34,6 @@ export const ContactMe = () => {
                </span>
             </h4>
             <div className='space-y-10'>
-               {/* <div className='flex items-center justify-center space-x-5'>
-                  <PhoneIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
-                  <p>+123456789</p>
-               </div> */}
                <div className='flex items-center justify-center space-x-5'>
                   <EnvelopeIcon className='h-7 w-7 animate-pulse text-[#F7AB0A]' />
                   <p>rishabh7g@gmail.com</p>
