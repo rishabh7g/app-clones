@@ -24,7 +24,7 @@ export const Skill = ({ directionLeft, skill, ...props }: SkillProps) => {
             transition={{ duration: 1 }}
             whileInView={framerWhileInView}
             src={urlFor(skill?.image).url()}
-            className='h-12 w-12 rounded-full border border-gray-500 object-cover filter transition duration-300 ease-in-out group-hover:grayscale sm:h-24 sm:w-24 xl:h-32 xl:w-32'
+            className='h-14 w-14 rounded-full border border-gray-500 object-cover filter transition duration-300 ease-in-out group-hover:grayscale sm:h-24 sm:w-24 xl:h-32 xl:w-32'
          />
          <div className='absolute z-0 h-10 w-10 rounded-full opacity-0 transition duration-300 ease-in-out group-hover:bg-white group-hover:opacity-80 sm:h-24 sm:w-24 md:h-28 md:w-28 xl:h-32 xl:w-32'>
             <div className='flex h-full items-center justify-center'>
